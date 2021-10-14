@@ -1,12 +1,3 @@
-/* 
-Sir, i've added 2 features po, and used advance concepts such as higher order function. I also made sure to employ the best practices, 
-it is usually not a good idea to fill the main thread(main function) with unencapsulated codes. 
-    
-Features i've added:
-    - if the input from the user isn't a number, return a message and forcefully end the program
-    - if the arithmetic result doesn't have a floating point, print them as integer, otherwise print them as a float
-*/
-
 // import necessary library
 #include <stdio.h>
 #include <math.h>
@@ -62,5 +53,45 @@ int main() {
     askNumbersCalculateArithmetic(arithmetic);
     
     // success execution for main thread
+    return 0;
+}
+
+// 2. -------------------------------------------------------------------------------
+
+// import necessary library
+#include <iostream>
+#include <stdlib.h>
+
+// function that calculates the area of rectangle
+float areaOfRectangle (float base, float height) {
+    return base * height;
+}
+
+// higher order function that invokes the areaOfRectangle function
+void askForBaseHeightPrintArea (float (*function)(float,float)) {
+    // declare variables
+    float base,height;
+    
+    // i/o
+    std::cout << "Enter Base: ";
+    if(!(std::cin >> base)){
+        std::cout << "Please enter a valid character, enter only a number. Re-run the program!";
+        exit(1);
+    }
+    std::cout << "Enter Height: ";
+    if(!(std::cin >> height)){
+        std::cout << "Please enter a valid character, enter only a number. Re-run the program!";
+        exit(1);
+    }
+    
+    // print and invoke the callback function
+    std::cout << "Area is: " << function(base,height);
+}
+
+int main() {
+    // call the higher order function 
+    askForBaseHeightPrintArea(&areaOfRectangle);
+
+    // successful execution
     return 0;
 }
