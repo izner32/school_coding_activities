@@ -5,22 +5,22 @@
 // function that prints the basic arithmetic calculations for the specified input
 void arithmetic (float firstNumber, float secondNumber) {
     // if the result of arithmetic calculations has decimal print float, if not print int; multiple conditional statement has to be placed since you cannot change the datatype at runtime
-    if ((firstNumber - floor(firstNumber)) + (secondNumber - floor(secondNumber)) >= 0 ){
+    if ((firstNumber + secondNumber) - (floor(firstNumber + secondNumber)) == 0 ){
         printf("Sum: %d\n", (int)firstNumber + (int)secondNumber);
     } else {
         printf("Sum: %.2f\n", firstNumber + secondNumber);
     }
-    if ((firstNumber - floor(firstNumber)) - (secondNumber - floor(secondNumber)) >= 0 ){
+    if ((firstNumber - secondNumber) - (floor(firstNumber - secondNumber)) == 0 ){
         printf("Difference: %d\n", (int)firstNumber - (int)secondNumber);
     } else {
         printf("Difference: %.2f\n", firstNumber - secondNumber);
     }
-    if ((firstNumber - floor(firstNumber)) * (secondNumber - floor(secondNumber)) >= 0 ){
+    if ((firstNumber * secondNumber) - (floor(firstNumber * secondNumber)) == 0 ){
         printf("Product: %d\n", (int)firstNumber * (int)secondNumber);
     } else {
         printf("Product: %.2f\n", firstNumber * secondNumber);
     }
-    if ((firstNumber - floor(firstNumber)) / (secondNumber - floor(secondNumber)) >= 0 ){
+    if ((firstNumber / secondNumber) - (floor(firstNumber / secondNumber)) == 0 ){
         printf("Quotient: %d\n", (int)firstNumber / (int)secondNumber);
     } else {
         printf("Quotient: %.2f\n", firstNumber / secondNumber);
