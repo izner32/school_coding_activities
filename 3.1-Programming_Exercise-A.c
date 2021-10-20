@@ -6,7 +6,7 @@
 void arithmetic (float firstNumber, float secondNumber) {
     // if the result of arithmetic calculations has decimal print float, if not print int; multiple conditional statement has to be placed since you cannot change the datatype at runtime
     if ((firstNumber + secondNumber) - (floor(firstNumber + secondNumber)) == 0 ){
-        printf("Sum: %d\n", (int)firstNumber + (int)secondNumber);
+        printf("Sum: %d\n", (int)firstNumber + (int)secondNumber); // typecasting into integer
     } else {
         printf("Sum: %.2f\n", firstNumber + secondNumber);
     }
